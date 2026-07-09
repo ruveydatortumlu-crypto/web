@@ -1,6 +1,5 @@
-import { Package } from "lucide-react";
+import { Lock, Package } from "lucide-react";
 import { Product } from "@/lib/types";
-import { formatPrice } from "@/lib/format";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
@@ -20,15 +19,16 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className="flex flex-1 flex-col gap-1 p-4">
         <h3 className="font-semibold text-neutral-900">{product.name}</h3>
         <p className="text-sm text-neutral-500">{product.unit}</p>
-        <p className="mt-2 text-lg font-bold text-neutral-900">
-          {formatPrice(product.price, product.currency)}
+        <p className="mt-2 flex items-center gap-1.5 text-sm text-neutral-500">
+          <Lock size={14} />
+          Fiyat için bayi girişi yapın
         </p>
-        <button
-          type="button"
-          className="mt-3 w-full rounded-lg bg-green-800 py-2 text-sm font-semibold text-white hover:bg-green-900"
+        <a
+          href="#"
+          className="mt-3 block w-full rounded-lg bg-green-800 py-2 text-center text-sm font-semibold text-white hover:bg-green-900"
         >
-          Sepete Ekle
-        </button>
+          Bayi Girişi
+        </a>
       </div>
     </div>
   );

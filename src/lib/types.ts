@@ -4,6 +4,12 @@ export interface Category {
   icon: string;
 }
 
+export interface Brand {
+  id: string;
+  name: string;
+  categoryId: string;
+}
+
 export interface Product {
   id: string;
   sku: string;
